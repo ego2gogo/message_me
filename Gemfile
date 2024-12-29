@@ -17,6 +17,10 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# semantic-ui-sass is a Sass-powered version of Semantic UI 
+gem 'semantic-ui-sass', '~> 2.2', '>= 2.2.1.1'
+gem 'jquery'
+
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 

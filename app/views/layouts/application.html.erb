@@ -7,6 +7,13 @@
     <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 
     <%= yield :head %>
 
@@ -16,6 +23,7 @@
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
+    
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
@@ -23,6 +31,22 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="ui inverted small menu">
+      <div class="ui container" style="width: 90%"> 
+        <a class="item" href="/">
+          Home
+        </a>
+        <a class="item">
+          Messages
+        </a>
+        <div class="item right">
+          <div class="ui primary button">Sign up</div> &nbsp;&nbsp; 
+          <div class="ui button""><a href="/login">Log-in</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="ui container" style="width: 90%">
+      <%= yield %>
+    <div>
   </body>
 </html>
