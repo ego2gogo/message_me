@@ -2,6 +2,7 @@
 <html>
   <head>
     <title><%= content_for(:title) || "Message Me" %></title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -31,20 +32,7 @@
   </head>
 
   <body>
-    <div class="ui inverted small menu">
-      <div class="ui container" style="width: 90%"> 
-        <a class="item" href="/">
-          Home
-        </a>
-        <a class="item">
-          Messages
-        </a>
-        <div class="item right">
-          <div class="ui primary button">Sign up</div> &nbsp;&nbsp; 
-          <div class="ui button""><a href="/login">Log-in</a></div>
-        </div>
-      </div>
-    </div>
+    <%= render 'layouts/navigation' %>
     <div class="ui container" style="width: 90%">
       <%= yield %>
     <div>
