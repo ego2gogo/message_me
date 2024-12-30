@@ -9,9 +9,7 @@
             <div class="content">
                 <div class="ui large feed">
                     <h4 class="ui header">Activity</h4>
-                    <% @messages.each do |message| %>
-                       <%= render 'layouts/message', message: message %>
-                    <% end %>
+                       <%= render @messages %>
                 </div>
                 <div class="flickr_pagination" style="text-align: left;">
                     <%= will_paginate @messages, :container => false %>

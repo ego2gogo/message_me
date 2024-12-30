@@ -1,0 +1,13 @@
+<%# 
+ * This is a partial view that will be used to render a single message.
+ * It will be used in the messages/index.html.erb view.
+ * It will display the message's creation date, the user who created the message, and the message's body.
+ * it is called using a rails convention "render @messages" in the messages/index.html.erb view.
+%>
+<div class="event">
+    <div class="content">
+        <div class="summary">
+            <%= message.created_at.strftime("%Y/%m/%d - %H:%M %Z") %> | <em style="color: red;"><%= message.user.username %> : </em> <%= message.body %>
+        </div>
+    </div>
+</div>

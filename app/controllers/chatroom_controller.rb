@@ -1,7 +1,7 @@
 class ChatroomController < ApplicationController
   def index
     # use this if you want to paginate messages
-    @messages = Message.paginate(page: params[:page], per_page: 10)
+    @messages = Message.paginate(page: params[:page], per_page: 3)
     # otherwise, use this
     # @messages = Message.all
   end
