@@ -9,6 +9,9 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  # configure to local time zone
+  config.time_zone = "Pacific Time (US & Canada)"
+
   # Show full error reports.
   config.consider_all_requests_local = true
 

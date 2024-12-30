@@ -7,6 +7,7 @@ import "semantic-ui";
 /* helper function to get the value of the menu and redirect to the selected page */
 var urlmenu = document.getElementById('account');
 urlmenu.onchange = function () {
+    console.log("here");
     if (this.value !== '') window.location = this.options[this.selectedIndex].value;
 };
 

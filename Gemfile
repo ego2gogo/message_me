@@ -1,5 +1,8 @@
 source "https://rubygems.org"
 
+# pagination for Rails controller actions
+gem "will_paginate", "~> 3.1", ">= 3.1.6"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.1"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
@@ -22,7 +25,7 @@ gem 'semantic-ui-sass', '~> 2.2', '>= 2.2.1.1'
 gem 'jquery'
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]

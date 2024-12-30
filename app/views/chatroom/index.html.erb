@@ -1,1 +1,50 @@
-<h2>Index Page</h2>
+<h4 class="ui center aligned medium icon header">
+  <i class="circular coffee icon inverted red"></i>
+  Chat Now
+</h4>
+
+<div class="ui two column grid">
+    <div class="twelve wide column">
+        <div class = "ui fluid raised card" style="height: 450px;">
+            <div class="content">
+                <div class="ui large feed">
+                    <h4 class="ui header">Activity</h4>
+                    <% @messages.each do |message| %>
+                       <%= render 'layouts/message', message: message %>
+                    <% end %>
+                </div>
+                <div class="flickr_pagination" style="text-align: left;">
+                    <%= will_paginate @messages, :container => false %>
+                 </div>
+                <div class="extra content">
+                    <form class="ui reply form">
+                        <div class="field">
+                            <textarea></textarea>
+                        </div>
+                        <div class="ui red labeled submit icon button">
+                            <i class="icon edit"></i> Add Reply
+                        </div>
+                    </form>
+                </div>
+            </div>    
+        </div>
+    </div>
+
+    <div class="four wide column">
+        <div class = "ui fluid raised card" style="height: 450px;">
+            <div class="content">
+                <div class="ui inverted vertical menu">
+                    <div class="active item">
+                        Users 
+                    </div>
+                    <a class="item">
+                        item1
+                    </a>
+                    <a class="item">
+                        item2  
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
