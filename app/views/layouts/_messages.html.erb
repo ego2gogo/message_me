@@ -1,0 +1,6 @@
+ <%# partial to display response messages %>
+    <div class="ui container" style="width: 90%"> 
+      <% flash.each do|name, msg| %>
+      <%= msg %>
+    </div>
+    <% end %>

@@ -1,5 +1,10 @@
     <div class="ui inverted small menu">
       <div class="ui container" style="width: 90%"> 
+        <% if session[:username] %>
+          <div class="item">
+            Hello <%= session[:username] %>! 
+          </div>  
+        <%end%>
         <a class="item" href="/">
           Chatroom
         </a>
@@ -9,9 +14,12 @@
         <div class="item right">
           <select class="ui dropdown" id="account">
             <option value="">Account</option>
-            <option value="/logut">Logout</option>
-            <option value="/login">Login</option>
-            <option value="/signup">SignUp</option>
+            <% if session[:username] %>
+              <option value="/logout">Logout</option>
+            <%end%>
+            <% if !session[:username] %>
+              <option value="/login">Login</option>
+            <%end%>
           </select> &nbsp;&nbsp; 
           <div class="ui button"><a href="/login">Signup</a></div>
         </div>
@@ -21,7 +29,6 @@
       /* helper function to get the value of the menu and redirect to the selected page */
       var urlmenu = document.getElementById('account');
       urlmenu.onchange = function () {
-          console.log("here");
           if (this.value !== '') window.location = this.options[this.selectedIndex].value;
       };
  
