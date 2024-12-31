@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # pagination for Rails controller actions
-gem "will_paginate", "~> 3.1", ">= 3.1.6"
+gem "will_paginate", "~> 4.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.1"
