@@ -16,52 +16,21 @@
                         <%= will_paginate @messages, :container => false %>
                     </div>
                     <div class="extra content">
-                        <form class="ui reply form">
+                        <%= form_with(model: @message, local: true) do |f|  %>
                             <div class="field">
-                                <textarea></textarea>
+                                <%= f.text_area :body, style: 'width: 100%' %><br>
+                                <%= f.submit 'Send', class: 'ui red submit button'%>
+                                
                             </div>
-                            <div class="ui red labeled submit icon button">
-                                <i class="icon edit"></i> Add Reply
-                            </div>
-                        </form>
+                           
+                        <% end %>
                     </div>
                 </div>  
             <% else %>
-                <div class="content">
-                    <div class="ui placeholder segment">
-                        <div class="ui two column very relaxed stackable grid">
-                            <div class="column">
-                                <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
-                                    <div class="field">
-                                        <%= f.label :username %>
-                                        <div class="ui left icon input">
-                                            <%= f.text_field :username, placeholder: "Enter your username" %>
-                                            <i class="user icon"></i>
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <%= f.label :password %>
-                                        <div class="ui left icon input">
-                                            <%= f.password_field :password, placeholder: "Enter your password" %>
-                                            <i class="lock icon"></i>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <%= f.button "Login", type: "submit", :class=> "ui red submit button" %>
-                                <% end %>
-                            </div>
-                            <div class="middle aligned column">
-                                <div class="ui big button">
-                                    <i class="signup icon"></i>
-                                    Sign Up
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ui vertical divider">
-                            Or
-                        </div>
-                    </div>
-                </div>
+                <script>
+                    /* Redirect to login page if user is not logged in */
+                    window.location.href = "/login";
+                </script>
             <% end %>
         </div>
     </div>
